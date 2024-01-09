@@ -1,34 +1,153 @@
 {
   "project_info": {
-    "project_number": "412858938477",
-    "project_id": "test-notification-flutte-aa484",
-    "storage_bucket": "test-notification-flutte-aa484.appspot.com"
+    "project_number": "983401128342",
+    "project_id": "iloveyoutoo-e9e64",
+    "storage_bucket": "iloveyoutoo-e9e64.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:412858938477:android:da08e4b203f879ce23bb64",
+        "mobilesdk_app_id": "1:983401128342:android:de646efb8143f450a07db7",
         "android_client_info": {
-          "package_name": "com.example.test_notifications"
+          "package_name": "com.love_you_too.admin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "412858938477-ejul2gjqq977srbapi2hu51tjr728dqf.apps.googleusercontent.com",
+          "client_id": "983401128342-49gg265trb8acp3rs9lkr5m6623efu4p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDW8UZ6szG6xRu6L2YEbOwhZp1EVeegycM"
+          "current_key": "AIzaSyBNFQkS30HwAyn34L76ew5JztouCVP3aqU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "412858938477-ejul2gjqq977srbapi2hu51tjr728dqf.apps.googleusercontent.com",
+              "client_id": "983401128342-2j93hp1p76r9f5l2t58ho5ti8h7l10m2.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "983401128342-1b6l943f275qg4ls8gghbvs97bmd4043.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.love-you-too.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983401128342:android:af4daed9cc356f66a07db7",
+        "android_client_info": {
+          "package_name": "com.love_you_too.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983401128342-49gg265trb8acp3rs9lkr5m6623efu4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNFQkS30HwAyn34L76ew5JztouCVP3aqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983401128342-2j93hp1p76r9f5l2t58ho5ti8h7l10m2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "983401128342-1b6l943f275qg4ls8gghbvs97bmd4043.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.love-you-too.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983401128342:android:ff80766ca12697d7a07db7",
+        "android_client_info": {
+          "package_name": "com.love_you_too.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983401128342-1cd8skv2e3es9o5jrj9ebg995uqrh39b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.love_you_too.app",
+            "certificate_hash": "98ee4472c5a3c75286b9f5998719233532b4c1d2"
+          }
+        },
+        {
+          "client_id": "983401128342-jd90qc201no222jdqgebv9is0of3rld3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.love_you_too.app",
+            "certificate_hash": "2f59ec94df0ed78dcd10a297f7ab01b62a142fab"
+          }
+        },
+        {
+          "client_id": "983401128342-jp3fqolpdk5o4r71jkhj7tpt6h27smsj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.love_you_too.app",
+            "certificate_hash": "7defcb6ed6f2f87ea38b9e3d17878c2dd9eaba47"
+          }
+        },
+        {
+          "client_id": "983401128342-prm1hpjcm3nm9duq5snlp513d3ktbm9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.love_you_too.app",
+            "certificate_hash": "563f21fdc8d15b8c591fb3fbc68ad902c4dc3bf9"
+          }
+        },
+        {
+          "client_id": "983401128342-s79pf98pftbq8uekgcev2edl8t0sn5s5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.love_you_too.app",
+            "certificate_hash": "aa6038e4f1b57c7226f7990c91b500291238a76e"
+          }
+        },
+        {
+          "client_id": "983401128342-49gg265trb8acp3rs9lkr5m6623efu4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNFQkS30HwAyn34L76ew5JztouCVP3aqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983401128342-2j93hp1p76r9f5l2t58ho5ti8h7l10m2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "983401128342-1b6l943f275qg4ls8gghbvs97bmd4043.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.love-you-too.ios"
+              }
             }
           ]
         }

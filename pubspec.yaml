@@ -15,10 +15,20 @@ dependencies:
   firebase_messaging: ^14.7.9
   flutter_local_notifications: ^5.0.0+4
   http: ^0.13.3
+  hidden_drawer_menu: ^3.0.1
+  cloud_firestore: ^4.13.6
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  image_path: "assets/images/loveimage.jpeg"
+  android: true
+  ios: true
+
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/ 
