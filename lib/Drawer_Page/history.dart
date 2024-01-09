@@ -95,7 +95,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       Container(
                         child: Text("Title,",style: TextStyle(color: Colors.red,),)),
                       Container(
-      
+     // ok for title
                         child: Text(
                           client['email'],
                           style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold, fontSize: 18),
