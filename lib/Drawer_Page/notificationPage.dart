@@ -1,17 +1,14 @@
- 
-
 import 'package:flutter/material.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 import 'package:test_notifications/constants.dart';
 // import 'package:test_notifications/homepage.dart';
 import 'package:test_notifications/main.dart';
-import 'package:firebase_core/firebase_core.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -23,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   late TextEditingController _textToken;
   late TextEditingController _textSetToken;
-   
+
   final _textTitle = TextEditingController();
   final _textBody = TextEditingController();
 
@@ -47,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     _textToken = TextEditingController();
     _textSetToken = TextEditingController();
-    
+
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
       AndroidNotification? android = message.notification?.android;
@@ -67,7 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
 // final nameController = TextEditingController();
 //   final emailController = TextEditingController();
 
@@ -75,134 +71,141 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black12,
-     
+
       appBar: AppBar(
         backgroundColor: Colors.red,
-       title: Center(child: Text('Send Notifications' , style: TextStyle(color: Colors.white),)),
+        title: Center(
+            child: Text(
+          'Send Notifications',
+          style: TextStyle(color: Colors.white),
+        )),
       ),
       body: Padding(
-        
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(height: 50),
-             
               TextField(
                 controller: _textTitle,
                 decoration: InputDecoration(
                   labelText: "Enter Title",
-                   focusedBorder: UnderlineInputBorder(
-      borderSide: BorderSide(color: Colors.red), // Set the underline color to red
-    ),
-    labelStyle: TextStyle(
-      color: Colors.red, // Set the label text color to red
-    ),
-                  
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors.red), // Set the underline color to red
                   ),
+                  labelStyle: TextStyle(
+                    color: Colors.red, // Set the label text color to red
+                  ),
+                ),
               ),
               SizedBox(height: 8),
               TextField(
                 controller: _textBody,
-                decoration: InputDecoration(labelText: "Enter Body",
-                 focusedBorder: UnderlineInputBorder(
-      borderSide: BorderSide(color: Colors.red), // Set the underline color to red
-    ),
-    labelStyle: TextStyle(
-      color: Colors.red, // Set the label text color to red
-    ),
+                decoration: InputDecoration(
+                  labelText: "Enter Body",
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors.red), // Set the underline color to red
+                  ),
+                  labelStyle: TextStyle(
+                    color: Colors.red, // Set the label text color to red
+                  ),
                 ),
               ),
-               
               SizedBox(height: 30),
               Row(
                 children: [
-                
                   SizedBox(width: 8),
                   Expanded(
-                    child:
+                      child: TextButton(
+                    onPressed: () async {
+                      if (_textTitle.text.isEmpty || _textBody.text.isEmpty) {
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: Text('Error'),
+                            content:
+                                Text('Please enter something in both fields.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                style: TextButton.styleFrom(
+                                  primary:
+                                      Colors.red, // Set the text color to red
+                                ),
+                                child: Text('OK'),
+                              ),
+                            ],
+                          ),
+                        );
+                      } else {
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: Text('Done'),
+                            content: Container(
+                              constraints: BoxConstraints(
+                                  maxHeight: 200,
+                                  maxWidth:
+                                      200), // Set your desired max height and width
+                              child: Column(
+                                mainAxisSize: MainAxisSize
+                                    .min, // Ensure the column takes minimum space
+                                children: [
+                                  Text('You send notification '),
+                                  Text('& Your Data is store in History'),
+                                ],
+                              ),
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                style: TextButton.styleFrom(
+                                  primary:
+                                      Colors.red, // Set the text color to red
+                                ),
+                                child: Text('OK'),
+                              ),
+                            ],
+                          ),
+                        );
 
-                    TextButton(
-                      
-  onPressed: () async {
-    if (_textTitle.text.isEmpty || _textBody.text.isEmpty) {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Error'),
-          content: Text('Please enter something in both fields.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-               style: TextButton.styleFrom(
-    primary: Colors.red, // Set the text color to red
-  ),
-              child: Text('OK'),
-            ),
-          ],
-        ),
-      );
-    } else {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Done'),
-          content: Container(
-            constraints: BoxConstraints(maxHeight: 200, maxWidth: 200), // Set your desired max height and width
-            child: Column(
-              mainAxisSize: MainAxisSize.min, // Ensure the column takes minimum space
-              children: [
-                Text('You send notification '),
-                Text('& Your Data is store in History'),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-               style: TextButton.styleFrom(
-    primary: Colors.red, // Set the text color to red
-  ),
-              child: Text('OK'),
-            ),
-          ],
-        ),
-      );
+                        // Add client to Firestore
+                        CollectionReference collRef =
+                            FirebaseFirestore.instance.collection('client');
+                        await collRef.add({
+                          'email': _textTitle.text,
+                          'name': _textBody.text,
+                        });
 
-      // Add client to Firestore
-      CollectionReference collRef =
-          FirebaseFirestore.instance.collection('client');
-      await collRef.add({
-        'email': _textTitle.text,
-        'name': _textBody.text,
-      });
+                        // Get FCM token for the device
+                        String deviceToken =
+                            await FirebaseMessaging.instance.getToken() ?? "";
+                        await showNotification;
 
-      // Get FCM token for the device
-      String deviceToken =
-          await FirebaseMessaging.instance.getToken() ?? "";
-      await showNotification;
-
-      // Send FCM notification to the added client
-      await pushNotificationsAllUsers(
-        token: deviceToken,
-        title: _textTitle.text,
-        body: _textBody.text,
-      );
-      _textTitle.clear();
-      _textBody.clear();
-    }
-  },
-  child: Text('Send Notification and Add History',style: TextStyle(color: Colors.white),),
-   style: ElevatedButton.styleFrom(
-    primary: Colors.red, // Set the background color to red
-  ),
-)
- 
-                  ),
+                        // Send FCM notification to the added client
+                        await pushNotificationsAllUsers(
+                          token: deviceToken,
+                          title: _textTitle.text,
+                          body: _textBody.text,
+                        );
+                        _textTitle.clear();
+                        _textBody.clear();
+                      }
+                    },
+                    child: Text(
+                      'Send Notification and Add History',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.red, // Set the background color to red
+                    ),
+                  )),
                 ],
               ),
             ],
@@ -220,13 +223,12 @@ class _MyHomePageState extends State<MyHomePage> {
       //     SizedBox(
       //       width: 16,
       //     ),
-      
-      
+
       //   ],
       // ),
     );
   }
- 
+
   Future<bool> pushNotificationsAllUsers({
     required String token,
     required String title,
@@ -272,8 +274,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 importance: Importance.high,
                 color: Colors.blue,
                 playSound: true,
-                icon: '@mipmap/ic_launcher'))
-                );
+                icon: '@mipmap/ic_launcher')));
   }
 
   bool check() {
@@ -283,4 +284,3 @@ class _MyHomePageState extends State<MyHomePage> {
     return false;
   }
 }
- 

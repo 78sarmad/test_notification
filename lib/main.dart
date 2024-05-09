@@ -4,7 +4,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:test_notifications/firebase_options.dart';
-import 'package:test_notifications/loginpage.dart';
+// import 'package:test_notifications/loginpage.dart';
 import 'package:test_notifications/splashscreen.dart';
 // import 'package:test_notifications/splashscreen.dart';
  

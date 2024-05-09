@@ -12,6 +12,7 @@ import 'package:http/http.dart' as http;
 }
 
 class _HistoryPageState extends State<HistoryPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,6 +139,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       SizedBox(width: 8),
                       TextButton(
                         onPressed: () async {
+                           Navigator.pop(context);
 
                             showDialog(
                       context: context,
@@ -166,12 +168,16 @@ class _HistoryPageState extends State<HistoryPage> {
 
       // Send FCM notification to the added client
       await pushNotificationsAllUsers(
-        token: deviceToken, title: '', body: '',
+        token: deviceToken, 
+        
+        title:  client['email'].toString()
+        
+        , body:  client['name'].toString(),
          
       );
                           
 
-                          Navigator.pop(context);
+                        //  Navigator.pop(context);
                             },
                              style: TextButton.styleFrom(
     primary: Colors.red, // Set the text color to red
